@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome To Wimpy Chatty!</title>
+	
+	<link th:href="@{/css/bulma/bulma.css}" rel="stylesheet" />
+	
+	<link th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet"  />
+	
+	<link th:href="@{/css/wimpy/wimpy.css}" rel="stylesheet"  />
+	
+</head>
+<body>
+
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" th:href="@{/}"> 
+				<img th:src="@{/images/wimpy-logo.png}" width="152" height="88">
+			</a> 
+			<a role="button" class="navbar-burger" aria-label="menu"aria-expanded="false" data-target="navbarMenu"> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<div id="navbarMenu" class="navbar-menu navbar-end">
+			<div class="navbar-item">
+				<div class="buttons">
+					<a class="button is-info mr-2" th:href="@{/auth/profile}"> Profile</a>
+					<a class="button is-primary mr-2" th:href="@{/account?friend-page=1}"> Dashboard</a>
+					<a class="button is-light" th:href="@{/auth/logout}"> Logout</a>
+				</div>
+			</div>
+		</div>
+		
+	</nav>
+	
+	<div id="wrapper">
+		<section class="section">
+		
+			<div class="columns my-20">
+				<div class="column is-4-desktop is-offset-2">
+					<div class="card">
+					
+						<div class="card-content">
+							<form method="POST" th:action="@{/auth/update-account-information/submit}" th:object="${updateAccountInfoRequest}">
+							
+								<div class="field">
+		  							<label class="label">Account ID</label>
+		  							<div class="control">
+		    							<input class="input is-static" type="text" th:field="${updateAccountInfoRequest.accountId}" readonly>
+		  							</div>
+								</div>
+								
+								<div class="field">
+		  							<label class="label">Account Name</label>
+		  							<div class="control">
+		    							<input class="input is-static" type="text" th:field="${updateAccountInfoRequest.accountName}" readonly>
+		  							</div>
+								</div>
+								
+								<div class="field">
+		  							<label class="label">Display Name</label>
+		  							<div class="control">
+		    							<input class="input" type="text" th:field="${updateAccountInfoRequest.accountDisplayName}">
+		  							</div>
+								</div>
+								
+								<div class="field">
+									<button type="submit" class="button is-primary is-fullwidth" >Update Information</button>  							
+								</div>
+							
+							</form>
+						</div>
+						
+						
+					</div>
+				</div>
+				
+				<div class="column is-4-desktop">
+					<div class="card">
+					
+						<div class="card-content">
+							<form method="POST" th:action="@{/auth/update-password/submit}" th:object="${updatePasswordRequest}" >
+							
+								<div class="field">
+		  							<label class="label">Current Password</label>
+		  							<div class="control">
+		    							<input class="input" type="password" th:field="${updatePasswordRequest.currentPassword}">
+		  							</div>
+								</div>
+								
+								<div class="field">
+		  							<label class="label">New Password</label>
+		  							<div class="control">
+		    							<input class="input" type="password" th:field="${updatePasswordRequest.newPassword}">
+		  							</div>
+								</div>
+								
+								<div class="field">
+		  							<label class="label">Repeat New Password</label>
+		  							<div class="control">
+		    							<input class="input" type="password" th:field="${updatePasswordRequest.repeatedNewPassword}">
+		  							</div>
+								</div>
+								
+								
+								<div class="field">
+									<button type="submit" class="button is-primary is-fullwidth" >Update Password</button>  							
+								</div>
+							
+							</form>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		
+		</section>
+		
+	</div>
+
+	
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>Created with all the love in the world by Jeremiah Hasudungan</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

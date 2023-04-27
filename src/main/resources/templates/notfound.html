@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Wimpy Chatty!</title>
+
+	<link th:href="@{/css/bulma/bulma.css}" rel="stylesheet" />
+	
+	<link th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet"  />
+	
+	<link th:href="@{/css/wimpy/wimpy.css}" rel="stylesheet"  />
+	
+</head>
+
+<body>
+	
+	<div id="wrapper">
+		<section class="section">
+			
+			<div class="columns">
+				<div class="column is-6 is-offset-3">
+					<div class="card">
+						<div class="card-image">
+						    <figure class="image is-5by4">
+						      <img th:src="@{/images/not-found.svg}"alt="Placeholder image">
+						    </figure>
+						 </div>
+						 <div class="card-content">
+						 	<div class="content">
+						 		<p>Your Requested Page is Not Found</p>
+						 	</div>
+						 </div>
+						 <footer class="card-footer">
+						    <a href="#" class="card-footer-item">Back</a>
+  						</footer>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+	</div>
+	
+	
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>Created with all the love in the world by Jeremiah Hasudungan</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

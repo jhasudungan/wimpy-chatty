@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Wimpy Chatty!</title>
+
+	<link th:href="@{/css/bulma/bulma.css}" rel="stylesheet" />
+	
+	<link th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet"  />
+	
+	<link th:href="@{/css/wimpy/wimpy.css}" rel="stylesheet"  />	
+</head>
+
+<body>
+
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" th:href="@{/}"> 
+				<img th:src="@{/images/wimpy-logo.png}" width="152" height="88">
+			</a> 
+			<a role="button" class="navbar-burger" aria-label="menu"aria-expanded="false" data-target="navbarMenu"> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<div id="navbarMenu" class="navbar-menu navbar-end">
+			<div class="navbar-item">
+				<div class="buttons">
+					<a class="button is-medium is-primary mr-2" th:href="@{/auth/registration}"> Register</a>
+					<a class="button is-medium is-light" th:href="@{/auth/login}"> Login</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+			
+	<div id="wrapper">
+		<section class="section">
+			<div class="columns">
+				<div class="column is-6-desktop is-offset-3">
+					<div class="card">
+						<div class="card-content">
+							<p>Registration - Success</p>
+							<div class="block"></div>
+							<a class="button is-info" th:href="@{/auth/login}"><i class="fa fa-person mr-2"></i>Login To Your New Account</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>Created with all the love in the world by Jeremiah Hasudungan</p>
+		</div>
+	</footer>
+</body>
+</html>

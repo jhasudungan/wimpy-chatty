@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Wimpy Chatty!</title>
+
+	<link th:href="@{/css/bulma/bulma.css}" rel="stylesheet" />
+
+	<link th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet"  />
+
+	<link th:href="@{/css/wimpy/wimpy.css}" rel="stylesheet"  />
+
+</head>
+<body>
+
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" th:href="@{/}"> 
+				<img th:src="@{/images/wimpy-logo.png}" width="152" height="88">
+			</a> 
+			<a role="button" class="navbar-burger" aria-label="menu"aria-expanded="false" data-target="navbarMenu"> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<div id="navbarMenu" class="navbar-menu navbar-end">
+			<div class="navbar-item">
+				<div class="buttons">
+					<a class="button is-medium is-primary mr-2" th:href="@{/auth/registration}"> Register</a>
+					<a class="button is-medium is-light" th:href="@{/auth/login}"> Login</a>
+				</div>
+			</div>
+		</div>
+		
+	</nav>
+
+	<div id="wrapper">
+		<section class="hero is-medium is-primary">
+			<div class="hero-body">
+				<div class="columns">
+					<div class="column is-6-desktop">
+						<div class="columns is-vcentered">
+							<div class="column">
+								<p class="title">Unleash better communication</p>
+								<p class="subtitle">Save the day with seamless communication powered by wimpy.</p>
+								<a class="button is-medium is-large mr-2" th:href="@{/auth/registration}"> Register Now</a>
+							</div>
+						</div>
+					</div>
+					<div class="column is-6-desktop">
+						<div class="box">
+							<figure class="image is-16by9">
+	      						<img th:src="@{/images/hero.svg}" alt="tagline image">
+	   						</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<section class="footer">
+		<div class="content has-text-centered">
+			<p>Created with all the love in the world by Jeremiah Hasudungan</p>
+		</div>
+	</section>
+
+</body>
+</html>

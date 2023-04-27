@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome To Wimpy Chatty!</title>
+
+	<link th:href="@{/css/bulma/bulma.css}" rel="stylesheet" />
+	
+	<link th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet"  />
+	
+	<link th:href="@{/css/wimpy/wimpy.css}" rel="stylesheet"  />
+	
+</head>
+
+<body>
+	
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" th:href="@{/}"> 
+				<img th:src="@{/images/wimpy-logo.png}" width="152" height="88">
+			</a> 
+			<a role="button" class="navbar-burger" aria-label="menu"aria-expanded="false" data-target="navbarMenu"> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<div id="navbarMenu" class="navbar-menu navbar-end">
+			<div class="navbar-item">
+				<div class="buttons">
+					<a class="button is-medium is-primary mr-2" th:href="@{/auth/registration}"> Register</a>
+					<a class="button is-medium is-light" th:href="@{/auth/login}"> Login</a>
+				</div>
+			</div>
+		</div>
+		
+	</nav>
+	
+	<div id="wrapper">
+			<section class="section">
+			
+			<div class="columns my-20">
+				<div class="column is-4-desktop is-offset-4">
+					<div class="card">
+					
+						<div class="card-content">
+							<form method="POST" th:action="@{/auth/login}">
+							
+								<div class="field">
+		  							<label class="label">Account Name</label>
+		  							<div class="control">
+		    							<input class="input" type="text" placeholder="eg : @jhasudungan" name="username" id="username">
+		  							</div>
+								</div>
+								
+								<div class="field">
+		  							<label class="label">Password</label>
+		  							<div class="control">
+		    							<input class="input" type="password" placeholder="Enter Password" name="password" id="password">
+		  							</div>
+								</div>
+								
+								<div class="field">
+									<button type="submit" class="button is-primary is-fullwidth" >Login</button>  							
+								</div>
+								
+							</form>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+			
+		</section>
+	</div>
+	
+	
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>Created with all the love in the world by Jeremiah Hasudungan</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

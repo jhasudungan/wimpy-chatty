@@ -1,0 +1,9 @@
+.vertical-scrollable {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height:	300px;
+}
+
+.background-terrier {
+	background-color: hsl(0, 0%, 86%);
+}

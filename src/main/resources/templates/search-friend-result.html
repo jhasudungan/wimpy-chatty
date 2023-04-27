@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome To Wimpy Chatty!</title>
+	
+	<link th:href="@{/css/bulma/bulma.css}" rel="stylesheet"  />
+	
+	<link th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet"  />
+	
+	<link th:href="@{/css/wimpy/wimpy.css}" rel="stylesheet"  />
+		
+</head>
+<body>
+
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" th:href="@{/}"> 
+				<img th:src="@{/images/wimpy-logo.png}" width="152" height="88">
+			</a> 
+			<a role="button" class="navbar-burger" aria-label="menu"aria-expanded="false" data-target="navbarMenu"> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span> 
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
+
+		<div id="navbarMenu" class="navbar-menu navbar-end">
+			<div class="navbar-item">
+				<div class="buttons">
+					<a class="button is-info mr-2" th:href="@{/auth/profile}"> Profile</a>
+					<a class="button is-primary mr-2" th:href="@{/account?friend-page=1}"> Dashboard</a>
+					<a class="button is-light" th:href="@{/auth/logout}"> Logout</a>
+				</div>
+			</div>
+		</div>	
+		
+	</nav>
+	
+	<div id="wrapper">
+		<section class="container my-5">
+	
+			<div class="columns">
+				<div class="column is-6 is-offset-3">
+					
+					<div class="columns">
+						<div class="column">
+							<form method="POST" class="box" th:object="${searchAccountByAccountNameRequest}" th:action="@{/account/search-friend/submit}">
+								<div class="field" >
+									<input class="input is-primary" type="text" th:field="${searchAccountByAccountNameRequest.accountName}"  placeholder="Account Name">
+								</div>
+								<div class="field">
+									<div class="buttons">
+										<button class="button is-primary" type="submit"><i class="fa fa-search mr-2"></i>Search</button>
+										<a class="button is-info" th:href="@{/account/search-new-friend}"><i class="fa fa-plus-square mr-2"></i>Add New Friend</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+					<div class="columns">
+						<div class="column">
+							<div class="card my-3" th:each="friend : ${pageData.listOfFriend.data}">
+								<div class="card-content">
+									<p class="is-size-5	" th:text="${friend.accountDisplayName}"></p>
+									<div class="block"></div>
+									<a class="button is-info is-small" th:href="@{/account/chat/{connectedId}(connectedId=${friend.connectionId})}"><i class="fa fa-comment-o mr-2"></i>Chat</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="columns">
+						<div class="column is-6 is-offset-3">
+							<div class="buttons">
+								<a class="button is-info" th:href="@{/account?friend-page=1}"><i class="fa fa-angle-double-left mr-2"></i>Exit Search Mode</a>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		
+		</section>
+	</div>
+	
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>Created with all the love in the world by Jeremiah Hasudungan</p>
+		</div>
+	</footer>
+	
+</body>
+</html>
